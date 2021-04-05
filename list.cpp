@@ -28,7 +28,11 @@ public:
     class Iterator {
 public:
     Iterator( Element* El ) 
+<<<<<<< HEAD
         : iter( El) 
+=======
+        : iter( El ) 
+>>>>>>> 5761d70e907f8946d41ea9f7af966a26b72905c6
     {}
     ~Iterator()
     {}
@@ -54,10 +58,15 @@ public:
 
     void operator++() 
     {
+<<<<<<< HEAD
         if( !iter )
             throw "Iterator exception.";
                 
         iter = iter->p_next;
+=======
+        if( iter )
+            iter = iter->p_next;
+>>>>>>> 5761d70e907f8946d41ea9f7af966a26b72905c6
     }
 
     Element* iter;
@@ -77,6 +86,10 @@ private:
     size_t sizeNum=0;
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5761d70e907f8946d41ea9f7af966a26b72905c6
 int main()
 {
     List<int> l;
@@ -84,8 +97,11 @@ int main()
     l.push_front(4);
     l.push_front(9);
     l.push_front(2);
+<<<<<<< HEAD
     try
     {
+=======
+>>>>>>> 5761d70e907f8946d41ea9f7af966a26b72905c6
     for(auto i:l)
     {
         cout<<i<<" ";
@@ -142,6 +158,7 @@ int main()
         cout<<i<<" ";
     }
     cout<<endl;
+<<<<<<< HEAD
     }
     catch(const char& e)
     {
@@ -149,6 +166,8 @@ int main()
     }
     
     
+=======
+>>>>>>> 5761d70e907f8946d41ea9f7af966a26b72905c6
 
     return 0;
 }
@@ -308,5 +327,8 @@ void List< T >::swap(List<T> *l2)
         l2->push_front(i);
     }
     templ.clear();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5761d70e907f8946d41ea9f7af966a26b72905c6
 }

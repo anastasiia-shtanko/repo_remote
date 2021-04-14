@@ -20,7 +20,7 @@ public:
 
     struct Element
     {
-        Element() : p_next( nullptr ),t(nullptr) { };
+        Element() : p_next( nullptr ),t(0) { };
         Element( const T& t ) : t( t ), p_next( nullptr ) { };
 
         T t;
@@ -55,8 +55,8 @@ public:
 
     void operator++()
     {
-        if( !iter )
-            throw "Iterator exception.";
+        if( iter->p_next==nullptr )
+            throw invalid_argument("Increment exception.");
 
         iter = iter->p_next;
     }

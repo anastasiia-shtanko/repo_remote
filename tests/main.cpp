@@ -18,7 +18,29 @@ TEST(List,pop_front)
     EXPECT_EQ(list.front(), 2);
 }
 
+TEST(List,empty)
+{
+    List<int> list;
+    list.push_front(13);
+    EXPECT_FALSE(list.empty());
+}
 
+TEST(List, swap)
+{
+    List<int> l1,l2;
+    l1.push_front(13);
+    l1.push_front(11);
+    l2.push_front(31);
+    l1.swap(&l2);
+    EXPECT_EQ(l1.front(),31);
+}
+
+TEST(List, increment)
+{
+    List<int> list;
+    List<int>::Iterator iter=list.begin();
+    EXPECT_THROW(++iter,invalid_argument);
+}
 
 int main(int argc, char *argv[])
 {
@@ -87,9 +109,9 @@ int main(int argc, char *argv[])
     }
     cout<<endl;
     }
-    catch(const char& e)
+    catch(invalid_argument& e)
     {
-        std::cerr << e << endl;
+        cerr << e.what() << endl;
     }
 
 
